@@ -112,7 +112,7 @@ var app = new Vue({
 	methods: {
 		refreshAppts: function () {
 			var self = this
-			return fetch('https://flextimes.herokuapp.com/irvington/appointments', {
+			return fetch('https://flextimes.herokuapp.com/irvine/appointments', {
 				method: 'POST',
 				headers: {
 					'Accept': 'application/json',
@@ -140,7 +140,7 @@ var app = new Vue({
 			var self = this
 			this.isLoading = true
 			var problem = false
-			fetch('https://flextimes.herokuapp.com/irvington/appointments', {
+			fetch('https://flextimes.herokuapp.com/irvine/appointments', {
 				method: 'POST',
 				headers: {
 					'Accept': 'application/json',
@@ -170,7 +170,7 @@ var app = new Vue({
 						self.renderBarcode()
 					}
 				})
-			fetch('https://flextimes.herokuapp.com/irvington/offerings', {
+			fetch('https://flextimes.herokuapp.com/irvine/offerings', {
 				method: 'POST',
 				headers: {
 					'Accept': 'application/json',
@@ -189,7 +189,7 @@ var app = new Vue({
 					storeCredentials()
 					self.offerings = json.reverse()
 				})
-			fetch('https://flextimes.herokuapp.com/irvington/teachers')
+			fetch('https://flextimes.herokuapp.com/irvine/teachers')
 				.then(res => res.json())
 				.then(obj => {
 					self.teacherMapping = obj
@@ -230,7 +230,7 @@ var app = new Vue({
 			}
 			var self = this
 			this.isLoading = true
-			fetch('https://flextimes.herokuapp.com/irvington/makeAppointment', {
+			fetch('https://flextimes.herokuapp.com/irvine/makeAppointment', {
 				method: 'POST',
 				headers: {
 					'Accept': 'application/json',
@@ -260,7 +260,7 @@ var app = new Vue({
 			}
 			var self = this
 			this.isLoading = true
-			fetch('https://flextimes.herokuapp.com/irvington/makeAppointment', {
+			fetch('https://flextimes.herokuapp.com/irvine/makeAppointment', {
 				method: 'POST',
 				headers: {
 					'Accept': 'application/json',
@@ -306,7 +306,7 @@ var app = new Vue({
 				alert('Sorry, you can\'t delete teacher-created appointments.')
 				this.isLoading = false
 			} else {
-				fetch('https://flextimes.herokuapp.com/irvington/deleteAppointment', {
+				fetch('https://flextimes.herokuapp.com/irvine/deleteAppointment', {
 					method: 'POST',
 					headers: {
 						'Accept': 'application/json',
